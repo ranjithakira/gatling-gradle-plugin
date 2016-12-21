@@ -1,0 +1,40 @@
+plugins {
+	id 'java-gradle-plugin'
+	id 'groovy'
+	id 'com.gradle.plugin-publish' version '0.9.5'
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+	jcenter()
+}
+
+dependencies {
+	testCompile gradleTestKit()
+	testCompile('org.spockframework:spock-core:1.1-groovy-2.4-rc-2') {
+		exclude module: 'groovy-all'
+	}
+	testCompile 'commons-io:commons-io:2.5'
+}
+
+test {
+	testLogging {
+		showStandardStreams = true
+	}
+}
+
+pluginBundle {
+	website = 'https://github.com/lkishalmi/gradle-gatling-plugin'
+	vcsUrl = 'https://github.com/lkishalmi/gradle-gatling-plugin'
+	description = 'Gatling Simulation Execution'
+	tags = ['gatling', 'load test', 'stress test', 'performance test', 'scala']
+
+	plugins {
+		gatlingPlugin {
+			id = 'com.github.lkishalmi.gatling'
+			displayName = 'Gatling Simulation Execution'
+		}
+	}
+}
