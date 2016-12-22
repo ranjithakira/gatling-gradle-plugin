@@ -2,6 +2,7 @@ package io.oneclicklabs.gatling.gradle.plugin
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.tasks.scala.ScalaCompile;
 
 /**
  * Created by oneclicklabs.io on 12/21/16.

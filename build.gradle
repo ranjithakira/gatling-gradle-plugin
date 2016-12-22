@@ -1,15 +1,20 @@
 plugins {
-	id 'java-gradle-plugin'
 	id 'groovy'
 	id 'com.gradle.plugin-publish' version '0.9.5'
 }
 
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
+dependencies {
+	compile gradleApi()
+}
 
 apply plugin: "com.gradle.plugin-publish"
 
-version = "0.0.1"
+jar {
+	baseName = 'perf-test-task'
+	version = '0.0.3'
+}
+
+version = "0.0.3"
 group = "io.oneclicklabs.gatling"
 
 pluginBundle {
